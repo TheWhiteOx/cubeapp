@@ -1,4 +1,4 @@
-# Project Name #
+# HoloUI #
 
 <!-- 
 > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
@@ -15,39 +15,30 @@ Oh, and I also like to write press-releases in what I call "Oprah-speak" for mai
 
 Once the project moves into development, the press release can be used as a touchstone; a guiding light. The product team can ask themselves, "Are we building what is in the press release?" If they find they're spending time building things that aren't in the press release (overbuilding), they need to ask themselves why. This keeps product development focused on achieving the customer benefits and not building extraneous stuff that takes longer to build, takes resources to maintain, and doesn't provide real customer benefit (at least not enough to warrant inclusion in the press release).
  -->
- 
-## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
-  HoloUI
 
-## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+## WTF is this? ##
+  > 
   Renders information feeds, videos, news, stats, temperatures, weather, sushi and ninjas, images and queries onto sides of a three-dimensional shape for your holowatch, portable holodisplay or home holodisplay.
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  > 
+  With the dawn of the holographic web upon us.  This prototype which uses the now-obsolete 2015 web era frameworks will act as an elevator to deliver you to the promised land of the holographic web, where UI's, information and the web are decoupled from that rectangular screen that everybody used to stare at all day. Caution: Elevator only holds five at a time.
 
 
-## Problem ##
-  > Describe the problem your product solves.
-  Nothing to solve, move along.
-
-
-## Solution ##
+## Why the hell? ##
   > Describe how your product elegantly solves the problem.
-  This crappy app creates more problems than it solves, generating more jobs, so that the plumbers of the internet have yet one more item to plumb, increasing demand in the labor market, driving unemployment numbers down and thereby foritifying national strength, security and prosperity.
+  This crappy app creates more problems than it solves, generating more jobs, so that the plumbers of the holographic internet have yet one more item to plumb, increasing demand in the labor market, driving unemployment numbers down and thereby foritifying national strength, security and prosperity. World peace, one love.
 
-## Quote from You ##
+## A word from the Company, to YOU. ##
   > A quote from a spokesperson in your company.
   "GRAAAATTTT SUCCESSSS" - Borat
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
-  Just clone the repo and start hacking!
+  > Just clone the repo and start hacking and then run it through the holocompilers.
 
-## Customer Quote ##
+## Customers Say... ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
   "What an AWESOME way to manage my A.D.D!" - crazy anonymous customer
 
-## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+## What should I do next? ##
+  > Check out the holowiki of course!
