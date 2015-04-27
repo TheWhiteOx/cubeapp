@@ -37,7 +37,7 @@ Once the project moves into development, the press release can be used as a touc
   > Just clone the repo and start hacking and then run it through the holocompilers.
 
 ## Customers Say... ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  > 
   "What an AWESOME way to manage my A.D.D!" - crazy anonymous customer
 
 ## What should I do next? ##
