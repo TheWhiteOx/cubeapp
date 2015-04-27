@@ -6,6 +6,7 @@ Meteor.startup(function() {
   var RenderNode = famous.core.RenderNode;
   var Transform = famous.core.Transform;
   var Quaternion = famous.math.Quaternion;
+  var InputSurface = famous.surfaces.InputSurface
 
   var mainContext = Engine.createContext();
 
@@ -39,7 +40,8 @@ Meteor.startup(function() {
       var x = (Math.random() * 2) - 1;
       var y = (Math.random() * 2) - 1;
       var z = (Math.random() * 2) - 1;
-      smallQuaternion = new Quaternion(5, 4, 0, 0);
+      //defaults are 185, x, y, z
+      smallQuaternion = new Quaternion(185, x, y, z);
   });
 
   // Creates box renderable
@@ -61,9 +63,9 @@ Meteor.startup(function() {
               }
             });
 
-            Meteor.setTimeout(function() {
-              //ThreeCube.make(surface._element);
-            }, 1000);
+            // Meteor.setTimeout(function() {
+            //   //ThreeCube.make(surface._element);
+            // }, 1000);
         }
 
         var modifier = new Modifier({
@@ -111,5 +113,14 @@ Meteor.startup(function() {
 
       return box;
   }
+  console.log(mainContext);
+
+  //begin UI input surfaces
+  var side1 = new InputSurface({
+    placeholder: 'hello input',
+    size: [300,30]
+
+  mainContext.add(side1)
+  
 
 });
