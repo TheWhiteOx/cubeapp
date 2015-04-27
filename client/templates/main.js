@@ -39,7 +39,7 @@ Meteor.startup(function() {
       var x = (Math.random() * 2) - 1;
       var y = (Math.random() * 2) - 1;
       var z = (Math.random() * 2) - 1;
-      smallQuaternion = new Quaternion(185, x, y, z);
+      smallQuaternion = new Quaternion(5, 4, 0, 0);
   });
 
   // Creates box renderable
@@ -53,7 +53,7 @@ Meteor.startup(function() {
             surface = new Surface({
               size: params.size,
               //adding new attributes
-              content: 'HELLO WORLD',
+              content:'TEST WORLD',
               properties: {
                 backgroundColor: 'orange',
                 textAlign: 'center',
