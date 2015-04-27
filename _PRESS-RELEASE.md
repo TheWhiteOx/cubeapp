@@ -26,7 +26,7 @@ Once the project moves into development, the press release can be used as a touc
 
 
 ## Why the hell? ##
-  > Describe how your product elegantly solves the problem.
+  > 
   This crappy app creates more problems than it solves, generating more jobs, so that the plumbers of the holographic internet have yet one more item to plumb, increasing demand in the labor market, driving unemployment numbers down and thereby foritifying national strength, security and prosperity. World peace, one love.
 
 ## A word from the Company, to YOU. ##
