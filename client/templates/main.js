@@ -1,4 +1,4 @@
-Meteor.startup(function() {
+Meteor.startup(function () {
 
   var Engine = famous.core.Engine;
   var Surface = famous.core.Surface;
@@ -18,109 +18,110 @@ Meteor.startup(function() {
   var smallQuaternion = new Quaternion(185, 1, 1, 1);
 
   var rotationModifier = new Modifier({
-      origin: [.5, .5],
-      align: [.5, .5]
+    origin: [.5, .5],
+    align: [.5, .5]
   });
 
   // Bind the box's rotation to the quaternion
-  rotationModifier.transformFrom(function() {
-      return quaternion.getTransform();
+  rotationModifier.transformFrom(function () {
+    return quaternion.getTransform();
   });
 
   mainContext.add(rotationModifier)
-             .add(createBox(260, 260, 260));
+    .add(createBox(260, 260, 260));
 
   // This is where the rotation is created
-  Engine.on('prerender', function() {
-      // You combine rotations through quaternion multiplication
-      quaternion = quaternion.multiply(smallQuaternion);
+  Engine.on('prerender', function () {
+    // You combine rotations through quaternion multiplication
+    quaternion = quaternion.multiply(smallQuaternion);
   });
 
-  Engine.on('click', function() {
-      var x = (Math.random() * 2) - 1;
-      var y = (Math.random() * 2) - 1;
-      var z = (Math.random() * 2) - 1;
-      //defaults are 185, x, y, z
-      smallQuaternion = new Quaternion(185, x, y, z);
+  Engine.on('click', function () {
+    var x = (Math.random() * 2) - 1;
+    var y = (Math.random() * 2) - 1;
+    var z = (Math.random() * 2) - 1;
+    //defaults are 185, x, y, z
+    smallQuaternion = new Quaternion(185, x, y, z);
   });
 
   // Creates box renderable
   function createBox(width, height, depth) {
-      var box = new RenderNode();
+    var box = new RenderNode();
 
-      function createSide(params, type){
-        var surface;
-        if (type === 'Canvas')
-        {
-            surface = new Surface({
-              size: params.size,
-              //adding new attributes
-              content:'TEST WORLD',
-              properties: {
-                backgroundColor: 'orange',
-                textAlign: 'center',
-                marginTop: '100px' 
-              }
-            });
-
-            // Meteor.setTimeout(function() {
-            //   //ThreeCube.make(surface._element);
-            // }, 1000);
-        }
-
-        var modifier = new Modifier({
-            transform: params.transform
+    function createSide(params, type) {
+      var surface;
+      if (type === 'Canvas') {
+        surface = new Surface({
+          size: params.size,
+          //adding new attributes
+          content: 'TEST WORLD',
+          properties: {
+            backgroundColor: 'orange',
+            textAlign: 'center',
+            marginTop: '100px'
+          }
         });
 
-        box.add(modifier).add(surface);
-      };
+        // Meteor.setTimeout(function() {
+        //   //ThreeCube.make(surface._element);
+        // }, 1000);
+      }
 
-      // Front
-      createSide({
-          size: [width, height],
-          transform: Transform.translate(0, 0, depth / 2)
-      }, 'Canvas');
+      var modifier = new Modifier({
+        transform: params.transform
+      });
 
-      // Back
-      createSide({
-          size: [width, height],
-          transform: Transform.multiply(Transform.translate(0, 0, - depth / 2), Transform.multiply(Transform.rotateZ(Math.PI), Transform.rotateX(Math.PI))),
-      }, 'Canvas');
+      box.add(modifier).add(surface);
+    };
 
-      // Top
-      createSide({
-          size: [width, depth],
-          transform: Transform.multiply(Transform.translate(0, -height / 2, 0), Transform.rotateX(Math.PI/2)),
-      }, 'Canvas');
+    // Front
+    createSide({
+      size: [width, height],
+      transform: Transform.translate(0, 0, depth / 2)
+    }, 'Canvas');
 
-      // Bottom
-      createSide({
-          size: [width, depth],
-          transform: Transform.multiply(Transform.translate(0, height / 2, 0), Transform.multiply(Transform.rotateX(-Math.PI/2), Transform.rotateZ(Math.PI))),
-      }, 'Canvas');
+    // Back
+    createSide({
+      size: [width, height],
+      transform: Transform.multiply(Transform.translate(0, 0, - depth / 2), Transform.multiply(Transform.rotateZ(Math.PI), Transform.rotateX(Math.PI))),
+    }, 'Canvas');
 
-      // Left
-      createSide({
-          size: [depth, height],
-          transform: Transform.multiply(Transform.translate(-width / 2, 0, 0), Transform.rotateY(-Math.PI/2))
-      }, 'Canvas');
+    // Top
+    createSide({
+      size: [width, depth],
+      transform: Transform.multiply(Transform.translate(0, -height / 2, 0), Transform.rotateX(Math.PI / 2)),
+    }, 'Canvas');
 
-      // Right
-      createSide({
-          size: [depth, height],
-          transform: Transform.multiply(Transform.translate(width / 2, 0, 0), Transform.rotateY(Math.PI/2))
-      }, 'Canvas');
+    // Bottom
+    createSide({
+      size: [width, depth],
+      transform: Transform.multiply(Transform.translate(0, height / 2, 0), Transform.multiply(Transform.rotateX(-Math.PI / 2), Transform.rotateZ(Math.PI))),
+    }, 'Canvas');
 
-      return box;
+    // Left
+    createSide({
+      size: [depth, height],
+      transform: Transform.multiply(Transform.translate(-width / 2, 0, 0), Transform.rotateY(-Math.PI / 2))
+    }, 'Canvas');
+
+    // Right
+    createSide({
+      size: [depth, height],
+      transform: Transform.multiply(Transform.translate(width / 2, 0, 0), Transform.rotateY(Math.PI / 2))
+    }, 'Canvas');
+
+    return box;
   }
+
+
   console.log(mainContext);
 
   //begin UI input surfaces
   var side1 = new InputSurface({
     placeholder: 'hello input',
-    size: [300,30]
+    size: [300, 30]
+  });
 
   mainContext.add(side1)
-  
 
-});
+})
